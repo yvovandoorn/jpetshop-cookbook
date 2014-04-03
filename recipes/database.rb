@@ -17,9 +17,6 @@
 # limitations under the License.
 #
 
-include_recipe 'mysql::server'
-include_recipe 'mysql-chef_gem::default'
-
 mysql_connection_info = { :host => 'localhost',
                           :username => 'root',
                           :password => node['mysql']['server_root_password'] }
