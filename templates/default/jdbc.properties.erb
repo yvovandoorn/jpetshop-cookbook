@@ -1,0 +1,14 @@
+# This file is managed by Chef.
+# Local changes will be overwritten.
+#
+# Properties file with JDBC-related settings.
+# Applied by PropertyPlaceholderConfigurer from "dataAccessContext-local.xml".
+# Targeted at system administrators, to avoid touching the context XML files.
+
+#jdbc.driverClassName=org.hsqldb.jdbcDriver
+#jdbc.url=jdbc:hsqldb:hsql://localhost:9002
+
+jdbc.driverClassName=com.mysql.jdbc.Driver
+jdbc.url=jdbc:mysql://localhost:3306/jpetstore
+jdbc.username=root
+jdbc.password=<%= node['mysql']['server_root_password'] -%>
