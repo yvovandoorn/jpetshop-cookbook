@@ -38,6 +38,11 @@ remote_file '/opt/vmware/vfabric-tc-server-standard/jpetstore/webapps/ROOT.war' 
   checksum node['jpetstore']['war_sum']
 end
 
+simple_iptables_rule "tcserver" do
+  rule "--proto tcp --dport 8080"
+  jump "ACCEPT"
+end
+
 tcserver_ctl 'jpetstore' do
   action :start
 end
